@@ -18,7 +18,15 @@ export const anasayfaS = StyleSheet.create({
     },
 
     logoK: {
-        marginLeft: tlfnH.W(2),
-        marginTop: tlfnH.H(2)
+        position: 'absolute',
+        left: tlfnH.W(2),
+        top: tlfnH.H(2)
     },
+
+
+    ustBolgeK: {
+        borderWidth: 1,
+        height: 200,
+        width: tlfnH.w,
+    }
 });

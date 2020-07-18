@@ -1,8 +1,9 @@
-import { AppRegistry, UIManager, Platform } from 'react-native';
+import { AppRegistry, UIManager } from 'react-native';
 import App from './src//views/App';
+import tlfnH from './src/helper/tlfnH';
 
 
-if (Platform.OS === 'android') UIManager.setLayoutAnimationEnabledExperimental(true);
+if (tlfnH.and) UIManager.setLayoutAnimationEnabledExperimental(true);
 
 //console.disableYellowBox = true;
 

@@ -17,6 +17,18 @@ class Anasayfa extends React.Component {
     componentWillMount = C.cWUnmount;
 
 
+    ustBolge() {
+        return (
+            <View style={[
+                S.ustBolgeK,
+                { display: C.splashAktif ? 'none' : 'flex' }
+            ]}
+            >
+            </View>
+        );
+    }
+
+
     render() {
         const sa = C.splashAktif;
 
@@ -29,6 +41,8 @@ class Anasayfa extends React.Component {
                         width={tlfnH.W(sa ? 60 : 20)}
                     />
                 </View>
+
+                {this.ustBolge()}
 
             </View>
         );

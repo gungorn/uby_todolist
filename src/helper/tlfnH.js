@@ -1,5 +1,5 @@
 import { observable, action, decorate } from 'mobx';
-import { Dimensions } from 'react-native';
+import { Dimensions, Platform } from 'react-native';
 
 class tlfnH {
     w = Dimensions.get('window').width;
@@ -8,6 +8,11 @@ class tlfnH {
 
     W = (d) => this.w * d / 100;
     H = (d) => this.h * d / 100;
+
+
+    and = Platform.OS === 'android';
+    ios = Platform.OS === 'ios';
+
 
 
     set = (k, v) => this[k] = v;
@@ -22,6 +27,10 @@ decorate(
 
         W: action,
         H: action,
+
+
+        and: observable,
+        ios: observable,
 
         set: action
     }
