@@ -1,35 +1,30 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import database from '@react-native-firebase/database';
-const db = database();
+import Anasayfa from './Anasayfa';
+
+const Stack = createStackNavigator();
 
 class App extends React.Component {
 
-    componentDidMount() {
-        this.ekle('/NOTLAR/KULLANICIID1', 'test');
-        this.ekle('/NOTLAR/KULLANICIID2', 'test');
-        this.ekle('/NOTLAR/KULLANICIID3', { test: { test: { test: { a: 'a' } } } });
-        this.ekle('/NOTLAR/KULLANICIID4', 'test');
-        this.ekle('/', 'hahaha');
+    navigasyon() {
+        return (
+            <NavigationContainer>
+                <Stack.Navigator screenOptions={{ headerShown: false }}>
+                    {<Stack.Screen name={'Anasayfa'} component={Anasayfa} />}
+                </Stack.Navigator>
+            </NavigationContainer>
+        );
     }
 
-
-    ekle(yol, veri) {
-        const ref = db.ref(yol);
-
-        const islem = ref.set(veri);
-
-        islem.then(d => console.log({ sonuc: true, data: d }))
-            .catch(e => console.log({ sonuc: true, error: e }));
-
-    }
 
     render() {
         return (
-            <View>
-                <Text>tetst</Text>
-            </View>
+            <>
+                {this.navigasyon()}
+            </>
         );
     }
 }
