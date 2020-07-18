@@ -5,6 +5,8 @@ import C from '../controllers/AnasayfaC';
 
 import Resim from './Components/Resim';
 
+import { anasayfaS as S } from './stil';
+import tlfnH from '../helper/tlfnH';
 
 class Anasayfa extends React.Component {
     componentDidMount = C.cDMount;
@@ -14,8 +16,12 @@ class Anasayfa extends React.Component {
 
     render() {
         return (
-            <View>
-                <Resim source={require('../../assets/logo.png')} height={100} />
+            <View style={[S.K, S.K2]}>
+
+                <View style={S.logoK}>
+                    <Resim source={require('../../assets/logo.png')} width={tlfnH.W(60)} />
+                </View>
+
             </View>
         );
     }
