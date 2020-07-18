@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import tlfnH from '../helper/tlfnH';
 
 //K: container
 //AK: subcontainer
@@ -11,12 +12,13 @@ export const anasayfaS = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'red'
     },
-    K2: {
+    K2: { //splash kapalı iken
         justifyContent: 'center',
         alignItems: 'center'
     },
 
     logoK: {
-        borderWidth: 1
-    }
+        marginLeft: tlfnH.W(2),
+        marginTop: tlfnH.H(2)
+    },
 });

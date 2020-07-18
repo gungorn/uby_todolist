@@ -1,12 +1,15 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { observer } from 'mobx-react';
 
 import C from '../controllers/AnasayfaC';
 
 import Resim from './Components/Resim';
 
-import { anasayfaS as S } from './stil';
 import tlfnH from '../helper/tlfnH';
+
+import { anasayfaS as S } from './stil';
+
 
 class Anasayfa extends React.Component {
     componentDidMount = C.cDMount;
@@ -15,11 +18,16 @@ class Anasayfa extends React.Component {
 
 
     render() {
-        return (
-            <View style={[S.K, S.K2]}>
+        const sa = C.splashAktif;
 
-                <View style={S.logoK}>
-                    <Resim source={require('../../assets/logo.png')} width={tlfnH.W(60)} />
+        return (
+            <View style={[S.K, sa && S.K2]}>
+
+                <View style={!sa && S.logoK}>
+                    <Resim
+                        source={require('../../assets/logo.png')}
+                        width={tlfnH.W(sa ? 60 : 20)}
+                    />
                 </View>
 
             </View>
@@ -27,4 +35,4 @@ class Anasayfa extends React.Component {
     }
 }
 
-export default Anasayfa;
+export default observer(Anasayfa);
