@@ -12,8 +12,6 @@ const H = tlfnH.H;
 export const anasayfaS = StyleSheet.create({
     K: {
         flex: 1,
-        borderWidth: 1,
-        borderColor: 'red'
     },
     K2: { //splash kapalı iken
         justifyContent: 'center',
@@ -22,23 +20,27 @@ export const anasayfaS = StyleSheet.create({
 
     logoK: {
         position: 'absolute',
-        left: W(2),
-        top: H(2)
+        left: W(4),
+        top: H(2),
+        //borderRightWidth: 1,
+        //borderRightColor: 'white',
+        // paddingRight: 20
     },
 
 
     ustBolgeK: {
-        borderWidth: 1,
-        borderColor: 'blue',
-        width: tlfnH.w,
         paddingLeft: W(20) + H(2),
         minHeight: W(20) + H(4),
-        justifyContent: 'center'
+        justifyContent: 'center',
+        backgroundColor: '#e89d43',
+        //margin: W(2),
+        //borderRadius: W(2),
     },
     bilgiY: {
         fontWeight: 'bold',
         fontSize: 15,
         textAlign: 'right',
-        paddingRight: W(3)
+        paddingRight: W(3),
+        color: '#0d1030'
     }
 });

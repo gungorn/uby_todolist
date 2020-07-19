@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StatusBar } from 'react-native';
 import { observer } from 'mobx-react';
 
 import C from '../controllers/AnasayfaC';
@@ -37,8 +37,12 @@ class Anasayfa extends React.Component {
 
         return (
             <View style={[S.K, sa && S.K2]}>
-                {this.ustBolge()}
+                <StatusBar
+                    backgroundColor={sa ? 'transparent' : '#e89d43'}
+                    barStyle={'dark-content'}
+                />
 
+                {this.ustBolge()}
 
                 <View style={!sa && S.logoK}>
                     <Resim
