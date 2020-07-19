@@ -14,7 +14,7 @@ import { anasayfaS as S } from './stil';
 class Anasayfa extends React.Component {
     componentDidMount = C.cDMount;
     componentDidUpdate = C.cDUpdate;
-    componentWillMount = C.cWUnmount;
+    componentWillUnmount = C.cWUnmount;
 
 
     ustBolge() {
