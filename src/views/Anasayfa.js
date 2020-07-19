@@ -9,6 +9,7 @@ import Resim from './Components/Resim';
 import tlfnH from '../helper/tlfnH';
 
 import { anasayfaS as S } from './stil';
+import temaH from '../helper/temaH';
 
 
 class Anasayfa extends React.Component {
@@ -19,37 +20,72 @@ class Anasayfa extends React.Component {
 
     ustBolge() {
         return (
-            <View style={[
-                S.ustBolgeK,
-                { display: C.splashAktif ? 'none' : 'flex' }
-            ]}
+            <View
+                style={[
+                    S.ustBolgeK,
+                    { display: C.splashAktif ? 'none' : 'flex' }
+                ]}
             >
-                <Text style={S.bilgiY}>Loreim ipsum dolar sit</Text>
-                <Text style={S.bilgiY}>Loreim ipsum</Text>
-                <Text style={S.bilgiY}>Loreim ipsum dolar sit amet</Text>
+                <Text style={S.bilgiY}>Lorem ipsum dolar sit</Text>
+                <Text style={S.bilgiY}>Lorem ipsum</Text>
+                <Text style={S.bilgiY}>Lorem ipsum dolar sit amet</Text>
+            </View>
+        );
+    }
+
+
+    notlar() {
+        return (
+            <View
+                style={[
+                    S.notlarK,
+                    C.splashAktif && { display: C.splashAktif ? 'none' : 'flex' }
+                ]}
+            >
+                {this.not()}
+                {this.not()}
+                {this.not()}
+                {this.not()}
+            </View>
+        );
+    }
+
+
+    not() {
+        return (
+            <View style={S.notK}>
+                <Text>NOT</Text>
+            </View>
+        );
+    }
+
+
+
+    splash() {
+        return (
+            <View style={!C.splashAktif && S.logoK}>
+                <Resim
+                    source={require('../../assets/logo.png')}
+                    width={tlfnH.W(C.splashAktif ? 60 : 20)}
+                />
             </View>
         );
     }
 
 
     render() {
-        const sa = C.splashAktif;
-
         return (
-            <View style={[S.K, sa && S.K2]}>
+            <View style={[S.K, C.splashAktif && S.K2]}>
                 <StatusBar
-                    backgroundColor={sa ? 'transparent' : '#e89d43'}
+                    backgroundColor={C.splashAktif ? 'transparent' : temaH.renkler.r1}
                     barStyle={'dark-content'}
                 />
 
                 {this.ustBolge()}
 
-                <View style={!sa && S.logoK}>
-                    <Resim
-                        source={require('../../assets/logo.png')}
-                        width={tlfnH.W(sa ? 60 : 20)}
-                    />
-                </View>
+                {this.notlar()}
+
+                {this.splash()}
             </View>
         );
     }

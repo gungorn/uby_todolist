@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import tlfnH from '../helper/tlfnH';
+import temaH from '../helper/temaH';
 
 //K: container
 //AK: subcontainer
@@ -8,6 +9,18 @@ import tlfnH from '../helper/tlfnH';
 
 const W = tlfnH.W;
 const H = tlfnH.H;
+
+const golge1 = {
+    shadowColor: "#000",
+    shadowOffset: {
+        width: 0,
+        height: 7,
+    },
+    shadowOpacity: 0.43,
+    shadowRadius: 9.51,
+
+    elevation: 15
+};
 
 export const anasayfaS = StyleSheet.create({
     K: {
@@ -32,7 +45,7 @@ export const anasayfaS = StyleSheet.create({
         paddingLeft: W(20) + H(2),
         minHeight: W(20) + H(4),
         justifyContent: 'center',
-        backgroundColor: '#e89d43',
+        backgroundColor: temaH.renkler.r1,
         //margin: W(2),
         //borderRadius: W(2),
     },
@@ -41,6 +54,18 @@ export const anasayfaS = StyleSheet.create({
         fontSize: 15,
         textAlign: 'right',
         paddingRight: W(3),
-        color: '#0d1030'
+        color: temaH.renkler.r2
+    },
+
+
+    notlarK: {
+        marginTop: H(1),
+        marginBottom: H(1)
+    },
+    notK: {
+        backgroundColor: temaH.renkler.r1,
+        marginTop: H(0.8),
+        marginBottom: H(0.8),
+        padding: W(2)
     }
 });
