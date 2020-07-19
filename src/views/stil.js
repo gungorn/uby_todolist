@@ -6,6 +6,9 @@ import tlfnH from '../helper/tlfnH';
 //B: Button
 //BY: buttonText
 
+const W = tlfnH.W;
+const H = tlfnH.H;
+
 export const anasayfaS = StyleSheet.create({
     K: {
         flex: 1,
@@ -19,14 +22,23 @@ export const anasayfaS = StyleSheet.create({
 
     logoK: {
         position: 'absolute',
-        left: tlfnH.W(2),
-        top: tlfnH.H(2)
+        left: W(2),
+        top: H(2)
     },
 
 
     ustBolgeK: {
         borderWidth: 1,
-        height: 200,
+        borderColor: 'blue',
         width: tlfnH.w,
+        paddingLeft: W(20) + H(2),
+        minHeight: W(20) + H(4),
+        justifyContent: 'center'
+    },
+    bilgiY: {
+        fontWeight: 'bold',
+        fontSize: 15,
+        textAlign: 'right',
+        paddingRight: W(3)
     }
 });

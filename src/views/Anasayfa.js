@@ -24,6 +24,9 @@ class Anasayfa extends React.Component {
                 { display: C.splashAktif ? 'none' : 'flex' }
             ]}
             >
+                <Text style={S.bilgiY}>Loreim ipsum dolar sit</Text>
+                <Text style={S.bilgiY}>Loreim ipsum</Text>
+                <Text style={S.bilgiY}>Loreim ipsum dolar sit amet</Text>
             </View>
         );
     }
@@ -34,6 +37,8 @@ class Anasayfa extends React.Component {
 
         return (
             <View style={[S.K, sa && S.K2]}>
+                {this.ustBolge()}
+
 
                 <View style={!sa && S.logoK}>
                     <Resim
@@ -41,9 +46,6 @@ class Anasayfa extends React.Component {
                         width={tlfnH.W(sa ? 60 : 20)}
                     />
                 </View>
-
-                {this.ustBolge()}
-
             </View>
         );
     }
