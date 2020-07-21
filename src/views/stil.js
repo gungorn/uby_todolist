@@ -34,16 +34,6 @@ export const anasayfaS = StyleSheet.create({
         flexDirection: 'row'
     },
 
-    logoK: {
-        position: 'absolute',
-        left: W(4),
-        top: H(2),
-        //borderRightWidth: 1,
-        //borderRightColor: 'white',
-        // paddingRight: 20
-    },
-
-
     ustBolgeK: {
         paddingLeft: W(20) + H(2),
         minHeight: W(20) + H(4),
@@ -62,8 +52,9 @@ export const anasayfaS = StyleSheet.create({
 
 
     notlarK: {
-        marginTop: H(1),
-        marginBottom: H(1)
+        flex: 1,
+        borderWidth: 1,
+        borderColor: 'red'
     },
     notK: {
         backgroundColor: temaH.renkler.r1,
@@ -79,10 +70,6 @@ export const anasayfaS = StyleSheet.create({
         textAlignVertical: 'center'
     },
     notResim: { borderRadius: 3 },
-    notResimCoklu: {
-        borderRadius: 3,
-        marginRight: 10
-    },
     notButonlarK: {
         //borderWidth: 1,
         //borderColor: 'white',
@@ -98,5 +85,12 @@ export const anasayfaS = StyleSheet.create({
     notIkon: {
         marginLeft: 3,
         marginRight: 3
+    }
+});
+export const splashS = StyleSheet.create({
+    K: {
+        position: 'absolute',
+        left: W(4),
+        top: H(2)
     }
 });

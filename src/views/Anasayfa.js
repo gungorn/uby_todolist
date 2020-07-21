@@ -12,7 +12,9 @@ import tlfnH from '../helper/tlfnH';
 
 import { anasayfaS as S } from './stil';
 import temaH from '../helper/temaH';
+import Splash from './Splash';
 
+//const Abc = observer(FlatList);
 
 class Anasayfa extends React.Component {
     componentDidMount = C.cDMount;
@@ -35,12 +37,10 @@ class Anasayfa extends React.Component {
         );
     }
 
-
     notlar() {
-
         const notlar = [ //SUNUCUDAN GELECEK
             {
-                aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
+                aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.sdfsdfsdf',
                 gorseller: ['https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg'],
                 renk: 'r3'
             },
@@ -77,12 +77,33 @@ class Anasayfa extends React.Component {
             {
                 aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
                 renk: 'r1'
-            },
-        ]
+            }
+        ];
 
 
         return (
             <View style={S.notlarK}>
+                <FlatList
+                    data={notlar}
+                    extraData={notlar}
+                    renderItem={d => this.not(d.item, d.index)}
+                //initialNumToRender={30}
+                //keyExtractor={(d, i) => (i.toString())}
+                //initialScrollIndex={5}
+                //ItemSeparatorComponent={() => <View style={{ backgroundColor: 'black', width: '75%', height: 2, alignSelf: 'center' }} />}
+                />
+
+
+                {/*
+                    <ScrollView>
+                        {
+                            notlar.map((d, i) => this.not(d, i))
+                        }
+                    </ScrollView>
+                */}
+
+
+                {/*
                 {this.not(notlar[0], 0)}
                 {this.not(notlar[1], 1)}
                 {this.not(notlar[2], 2)}
@@ -91,6 +112,7 @@ class Anasayfa extends React.Component {
                 {this.not(notlar[5], 5)}
                 {this.not(notlar[6], 6)}
                 {this.not(notlar[7], 7)}
+                */}
             </View>
         );
     }
@@ -98,7 +120,12 @@ class Anasayfa extends React.Component {
         const tekResim = d.gorseller && d.gorseller.length === 1;
 
         return (
-            <ViewA animation={'bounceInRight'} delay={250} style={S.notK}>
+            <ViewA
+                //animation={'bounceInRight'}
+                //delay={250}
+                //key={i}
+                style={[S.notK, { backgroundColor: temaH.notRenkleri[d.renk] }]}
+            >
                 <View style={S.AK}>
                     <Resim
                         style={S.notResim}
@@ -107,80 +134,32 @@ class Anasayfa extends React.Component {
 
                     <Text style={S.notAciklamaY}>{d.aciklama}</Text>
                 </View>
-
-                <View style={S.notButonlarK}>
-                    <TouchableOpacity style={S.notIkon} onPress={() => alert('test')} activeOpacity={0.2}>
-                        <AntDesign name={'delete'} color={temaH.renkler.r2} size={tlfnH.W(5.5)} />
-                    </TouchableOpacity>
-                    <TouchableOpacity style={S.notIkon}>
-                        <AntDesign name={'delete'} color={temaH.renkler.r2} size={tlfnH.W(5.5)} />
-                    </TouchableOpacity>
-                    <TouchableOpacity style={S.notIkon}>
-                        <AntDesign name={'delete'} color={temaH.renkler.r2} size={tlfnH.W(5.5)} />
-                    </TouchableOpacity>
-                    <TouchableOpacity style={S.notIkon}>
-                        <AntDesign name={'delete'} color={temaH.renkler.r2} size={tlfnH.W(5.5)} />
-                    </TouchableOpacity>
-                </View>
+                {this.notButonlar(d, i)}
             </ViewA >
         );
     }
 
-
-
-    splash() {
+    notButonlar(d, i) {
         return (
-            <View style={!C.splashAktif && S.logoK}>
-                <Resim
-                    source={require('../../assets/logo.png')}
-                    width={tlfnH.W(C.splashAktif ? 60 : 20)}
-                />
+            <View style={[S.notButonlarK, { backgroundColor: temaH.notRenkleri[d.renk] }]}>
+                <TouchableOpacity style={S.notIkon} onPress={() => alert('test')} activeOpacity={0.2}>
+                    <AntDesign name={'delete'} color={temaH.renkler.r2} size={tlfnH.W(5.5)} />
+                </TouchableOpacity>
+                <TouchableOpacity style={S.notIkon}>
+                    <AntDesign name={'delete'} color={temaH.renkler.r2} size={tlfnH.W(5.5)} />
+                </TouchableOpacity>
+                <TouchableOpacity style={S.notIkon}>
+                    <AntDesign name={'delete'} color={temaH.renkler.r2} size={tlfnH.W(5.5)} />
+                </TouchableOpacity>
+                <TouchableOpacity style={S.notIkon}>
+                    <AntDesign name={'delete'} color={temaH.renkler.r2} size={tlfnH.W(5.5)} />
+                </TouchableOpacity>
             </View>
         );
     }
 
 
     render() {
-        const resimler = [
-            'https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg',
-            'https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg',
-            'https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg',
-            'https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg',
-            'https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg',
-            'https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg',
-            'https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg',
-            'https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg',
-            'https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg',
-        ];
-
-        /*
-                return (
-                    <FlatList
-                        data={resimler}
-                        renderItem={d => {
-                            return (
-                                <Resim key={d.index} source={{ uri: d.item }} />
-                            );
-                        }}
-                    />
-                );
-
-                return (
-                    <View>
-                        <ScrollView>
-                            {
-                                resimler.map(
-                                    d => {
-                                        return (<Resim key={d.index} source={{ uri: d }} />);
-                                    }
-                                )
-                            }
-                        </ScrollView>
-                    </View>
-                );
-                */
-
-
         return (
             <View style={[S.K, C.splashAktif && S.K2]}>
                 <StatusBar
@@ -192,7 +171,7 @@ class Anasayfa extends React.Component {
 
                 {!C.splashAktif && this.notlar()}
 
-                {this.splash()}
+                <Splash />
             </View>
         );
     }
