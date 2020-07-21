@@ -10,9 +10,6 @@ class AnasayfaC {
     }
 
 
-    notButonlarKH = 0;
-
-
     splashAktif = true;
 
     set = (k, v) => this[k] = v;
@@ -25,8 +22,6 @@ decorate(
         cDMount: action,
         cDUpdate: action,
         cWUnmount: action,
-
-        notButonlarKH: observable,
 
         splashAktif: observable,
 

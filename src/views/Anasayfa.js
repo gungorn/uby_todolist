@@ -37,48 +37,78 @@ class Anasayfa extends React.Component {
 
 
     notlar() {
+
+        const notlar = [ //SUNUCUDAN GELECEK
+            {
+                aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
+                gorseller: ['https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg'],
+                renk: 'r3'
+            },
+            {
+                aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
+                gorseller: [
+                    'https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg',
+                    'https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg',
+                    'https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg',
+                    'https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg',
+                ],
+                renk: 'r2'
+            },
+            {
+                aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
+                renk: 'r8'
+            },
+            {
+                aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
+                renk: 'r7'
+            },
+            {
+                aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
+                renk: 'r5'
+            },
+            {
+                aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
+                renk: 'r6'
+            },
+            {
+                aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
+                renk: 'r4'
+            },
+            {
+                aciklama: 'Irure dolore voluptate voluptate dolor amet anim aliquip fugiat est Lorem in aliqua dolor.',
+                renk: 'r1'
+            },
+        ]
+
+
         return (
-            <View
-                style={[
-                    S.notlarK,
-                    //C.splashAktif && { display: C.splashAktif ? 'none' : 'flex' }
-                ]}
-            >
-                {this.not()}
-                {this.not()}
-                {this.not()}
-                {this.not()}
+            <View style={S.notlarK}>
+                {this.not(notlar[0], 0)}
+                {this.not(notlar[1], 1)}
+                {this.not(notlar[2], 2)}
+                {this.not(notlar[3], 3)}
+                {this.not(notlar[4], 4)}
+                {this.not(notlar[5], 5)}
+                {this.not(notlar[6], 6)}
+                {this.not(notlar[7], 7)}
             </View>
         );
     }
-
-
-    not() {
-        const resimler = [
-            'https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg',
-            'https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg',
-            'https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg',
-            'https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg',
-        ];
-
-        const tekResim = resimler.length === 1;
+    not(d, i) {
+        const tekResim = d.gorseller && d.gorseller.length === 1;
 
         return (
-            <ViewA animation={'bounceInRight'} delay={250} style={[S.notK, /*{ paddingBottom: C.notButonlarKH }*/]}>
-
+            <ViewA animation={'bounceInRight'} delay={250} style={S.notK}>
                 <View style={S.AK}>
                     <Resim
                         style={S.notResim}
-                        source={{ uri: resimler[0] }}
+                        source={{ uri: 'https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg' }}
                     />
 
-                    <Text style={S.notAciklamaY}>Lorem ipsum dolar sit amet Lorem ipsum dolar sit amet Lorem ipsum dolar sit amet Lorem</Text>
+                    <Text style={S.notAciklamaY}>{d.aciklama}</Text>
                 </View>
 
-                <View
-                    style={S.notButonlarK}
-                //onLayout={d => C.notButonlarKH === 0 && C.set('notButonlarKH', d.nativeEvent.layout.height / 2.2)}
-                >
+                <View style={S.notButonlarK}>
                     <TouchableOpacity style={S.notIkon} onPress={() => alert('test')} activeOpacity={0.2}>
                         <AntDesign name={'delete'} color={temaH.renkler.r2} size={tlfnH.W(5.5)} />
                     </TouchableOpacity>
