@@ -3,7 +3,7 @@ import { LayoutAnimation } from 'react-native';
 
 class splashC {
     cDMount = () => {
-        setTimeout(() => this.durum = 2, 2000);
+        setTimeout(() => this.durum = 3, 2000);
     }
     cDUpdate = () => { LayoutAnimation.easeInEaseOut(); }
     cWUnmount = () => { }

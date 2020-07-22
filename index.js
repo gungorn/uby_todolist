@@ -3,7 +3,7 @@ import App from './src//views/App';
 import tlfnH from './src/helper/tlfnH';
 
 
-if (tlfnH.and) UIManager.setLayoutAnimationEnabledExperimental(true);
+if (tlfnH.android) UIManager.setLayoutAnimationEnabledExperimental(true);
 
 //console.disableYellowBox = true;
 
