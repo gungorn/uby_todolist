@@ -4,15 +4,15 @@ import { observer } from 'mobx-react';
 import { View as ViewA } from 'react-native-animatable';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-import C from '../controllers/AnasayfaC';
+import C from '../../controllers/anasayfa/AnasayfaC';
 
-import Resim from './Components/Resim';
+import Resim from '../Components/Resim';
 
-import tlfnH from '../helper/tlfnH';
+import tlfnH from '../../helper/tlfnH';
 
-import { anasayfaS as S } from './stil';
-import temaH from '../helper/temaH';
-import Splash from './Splash';
+import { anasayfaS as S } from '../stil';
+import temaH from '../../helper/temaH';
+import Splash from '../Splash';
 
 //const Abc = observer(FlatList);
 
@@ -20,6 +20,7 @@ class Anasayfa extends React.Component {
     componentDidMount = C.cDMount;
     componentDidUpdate = C.cDUpdate;
     componentWillUnmount = C.cWUnmount;
+
 
 
     ustBolge() {
@@ -87,32 +88,8 @@ class Anasayfa extends React.Component {
                     data={notlar}
                     extraData={notlar}
                     renderItem={d => this.not(d.item, d.index)}
-                //initialNumToRender={30}
-                //keyExtractor={(d, i) => (i.toString())}
-                //initialScrollIndex={5}
-                //ItemSeparatorComponent={() => <View style={{ backgroundColor: 'black', width: '75%', height: 2, alignSelf: 'center' }} />}
+                    keyExtractor={(d, i) => (i.toString())}
                 />
-
-
-                {/*
-                    <ScrollView>
-                        {
-                            notlar.map((d, i) => this.not(d, i))
-                        }
-                    </ScrollView>
-                */}
-
-
-                {/*
-                {this.not(notlar[0], 0)}
-                {this.not(notlar[1], 1)}
-                {this.not(notlar[2], 2)}
-                {this.not(notlar[3], 3)}
-                {this.not(notlar[4], 4)}
-                {this.not(notlar[5], 5)}
-                {this.not(notlar[6], 6)}
-                {this.not(notlar[7], 7)}
-                */}
             </View>
         );
     }
@@ -120,12 +97,7 @@ class Anasayfa extends React.Component {
         const tekResim = d.gorseller && d.gorseller.length === 1;
 
         return (
-            <ViewA
-                //animation={'bounceInRight'}
-                //delay={250}
-                //key={i}
-                style={[S.notK, { backgroundColor: temaH.notRenkleri[d.renk] }]}
-            >
+            <ViewA style={[S.notK, { backgroundColor: temaH.notRenkleri[d.renk] }]}            >
                 <View style={S.AK}>
                     <Resim
                         style={S.notResim}

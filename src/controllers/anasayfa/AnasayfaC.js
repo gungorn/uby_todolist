@@ -2,14 +2,12 @@ import { observable, action, decorate } from 'mobx';
 import { LayoutAnimation } from 'react-native';
 
 class AnasayfaC {
-    cDMount = () => {
+    cDMount = async () => {
         setTimeout(() => this.splashAktif = false, 2000);
     }
     cDUpdate = () => { LayoutAnimation.easeInEaseOut(); }
     cWUnmount = () => {
     }
-
-
     splashAktif = true;
 
     set = (k, v) => this[k] = v;
