@@ -1,21 +1,17 @@
 import { observable, action, decorate } from 'mobx';
 import { LayoutAnimation } from 'react-native';
 
-class AnasayfaC {
-    cDMount = async () => {
-        setTimeout(() => this.splashAktif = false, 2000);
-    }
+class anasayfaC {
+    cDMount = async () => { }
     cDUpdate = () => { LayoutAnimation.easeInEaseOut(); }
-    cWUnmount = () => {
-    }
-    splashAktif = true;
+    cWUnmount = () => { }
 
     set = (k, v) => this[k] = v;
 }
 
 
 decorate(
-    AnasayfaC,
+    anasayfaC,
     {
         cDMount: action,
         cDUpdate: action,
@@ -28,4 +24,4 @@ decorate(
 );
 
 
-export default new AnasayfaC();
+export default new anasayfaC();

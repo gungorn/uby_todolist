@@ -5,6 +5,7 @@ import { observer } from 'mobx-react';
 import C from '../../controllers/anasayfa/ustBolgeC';
 
 import { anasayfaS as S } from '../stil';
+import splashC from '../../controllers/splashC';
 
 //const Abc = observer(FlatList);
 
@@ -19,7 +20,7 @@ class Anasayfa extends React.Component {
             <View
                 style={[
                     S.ustBolgeK,
-                    { display: C.splashAktif ? 'none' : 'flex' }
+                    { display: splashC.splashAktif ? 'none' : 'flex' }
                 ]}
             >
                 <Text style={S.bilgiY}>Lorem ipsum dolar sit</Text>

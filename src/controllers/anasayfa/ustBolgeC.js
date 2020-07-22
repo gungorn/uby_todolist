@@ -11,7 +11,7 @@ class ustBolgeC {
 
 
 decorate(
-    AnasayfaC,
+    ustBolgeC,
     {
         cDMount: action,
         cDUpdate: action,

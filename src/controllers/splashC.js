@@ -10,6 +10,7 @@ class splashC {
     }
     cWUnmount = () => { //KAPANIŞTAN HEMEN NÖCE
     }
+
     splashAktif = true; //true: splash göster, false: asnasayfa goster
 
     set = (k, v) => this[k] = v;

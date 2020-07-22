@@ -42,12 +42,15 @@ class Notlar extends React.Component {
                 <TouchableOpacity style={S.notIkon} onPress={() => alert('test')} activeOpacity={0.2}>
                     <AntDesign name={'delete'} color={temaH.renkler.r2} size={tlfnH.W(5.5)} />
                 </TouchableOpacity>
+
                 <TouchableOpacity style={S.notIkon}>
                     <AntDesign name={'delete'} color={temaH.renkler.r2} size={tlfnH.W(5.5)} />
                 </TouchableOpacity>
+
                 <TouchableOpacity style={S.notIkon}>
                     <AntDesign name={'delete'} color={temaH.renkler.r2} size={tlfnH.W(5.5)} />
                 </TouchableOpacity>
+
                 <TouchableOpacity style={S.notIkon}>
                     <AntDesign name={'delete'} color={temaH.renkler.r2} size={tlfnH.W(5.5)} />
                 </TouchableOpacity>
