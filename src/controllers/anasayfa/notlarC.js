@@ -8,13 +8,9 @@ class notlarC {
 
 
 
-    notButonlarAcik = -1;
-    notButonlarAcKapaYon = false; //false: varsayılan, true: yukarı
+    notButonlarAcik = -1; //butonların aktif olduüu notun indeksi (diğer indeksli notlar butonlar pasif)
     setNotButonlarAcik = i => {
         this.notButonlarAcik = this.notButonlarAcik === i ? -1 : i;
-        this.notButonlarAcKapaYon = true;
-
-        setTimeout(() => this.notButonlarAcKapaYon = false, 250);
     }
 
 
@@ -29,7 +25,6 @@ decorate(
         cWUnmount: action,
 
         notButonlarAcik: observable,
-        notButonlarAcKapaYon: observable,
         setNotButonlarAcik: action,
 
 

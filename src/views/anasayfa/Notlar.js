@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, FlatList } from 'react-native';
 import { observer } from 'mobx-react';
 import { View as ViewA } from 'react-native-animatable';
 
@@ -145,18 +145,7 @@ class Notlar extends React.Component {
                 <ScrollView>
                     <View style={{ height: tlfnH.H(3) }} />
 
-                    {/*
-                        BUNLARI BÖYLE TEK TEK Mİ YAZACAĞIZ?
-                        ÇARE: FLATLIST, YA DA SCROLLVIEW + ARRAY.MAP(d => <Component />)
-                    */}
-                    {this.not(notlar[0], 0)}
-                    {this.not(notlar[1], 1)}
-                    {this.not(notlar[2], 2)}
-                    {this.not(notlar[3], 3)}
-                    {this.not(notlar[4], 4)}
-                    {this.not(notlar[5], 5)}
-                    {this.not(notlar[6], 6)}
-                    {this.not(notlar[7], 7)}
+                    {notlar.map((d, i) => this.not(d, i))}
 
                     <View style={{ height: tlfnH.H(3) }} />
                 </ScrollView>
