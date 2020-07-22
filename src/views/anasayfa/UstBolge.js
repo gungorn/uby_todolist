@@ -4,12 +4,10 @@ import { observer } from 'mobx-react';
 
 import C from '../../controllers/anasayfa/ustBolgeC';
 
-import { anasayfaS as S } from '../stil';
-import splashC from '../../controllers/splashC';
+import { anasayfaUstBolgeS as S } from '../stil';
 
-//const Abc = observer(FlatList);
 
-class Anasayfa extends React.Component {
+class UstBolge extends React.Component {
     componentDidMount = C.cDMount;
     componentDidUpdate = C.cDUpdate;
     componentWillUnmount = C.cWUnmount;
@@ -17,18 +15,13 @@ class Anasayfa extends React.Component {
 
     render() {
         return (
-            <View
-                style={[
-                    S.ustBolgeK,
-                    { display: splashC.splashAktif ? 'none' : 'flex' }
-                ]}
-            >
-                <Text style={S.bilgiY}>Lorem ipsum dolar sit</Text>
-                <Text style={S.bilgiY}>Lorem ipsum</Text>
-                <Text style={S.bilgiY}>Lorem ipsum dolar sit amet</Text>
+            <View style={S.K}>
+                <Text style={S.ustAlanY}>lorem ipsum dolar sit amet</Text>
+                <Text style={S.ustAlanY}>lorem ipsum dolar</Text>
+                <Text style={S.ustAlanY}>lorem ipsum dolar sit</Text>
             </View>
         );
     }
 }
 
-export default observer(Anasayfa);
+export default observer(UstBolge);

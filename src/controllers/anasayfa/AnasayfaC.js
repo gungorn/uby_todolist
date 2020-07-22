@@ -2,13 +2,17 @@ import { observable, action, decorate } from 'mobx';
 import { LayoutAnimation } from 'react-native';
 
 class anasayfaC {
-    cDMount = async () => { }
-    cDUpdate = () => { LayoutAnimation.easeInEaseOut(); }
-    cWUnmount = () => { }
+    cDMount = () => { //AÇILIŞTAN HEMEN SONRA
+    }
+    cDUpdate = () => { //UPDATE'DEN HEMEN SONRA
+        LayoutAnimation.easeInEaseOut();
+    }
+    cWUnmount = () => { //KAPANIŞTAN HEMEN NÖCE
+
+    }
 
     set = (k, v) => this[k] = v;
 }
-
 
 decorate(
     anasayfaC,
@@ -16,10 +20,7 @@ decorate(
         cDMount: action,
         cDUpdate: action,
         cWUnmount: action,
-
-        splashAktif: observable,
-
-        set: action
+        set: action,
     }
 );
 

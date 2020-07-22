@@ -2,16 +2,15 @@ import { observable, action, decorate } from 'mobx';
 import { LayoutAnimation } from 'react-native';
 
 class splashC {
-    cDMount = () => { //AÇILIŞTAN HEMEN SONRA
-        setTimeout(() => this.splashAktif = false, 2000);
+    cDMount = () => {
+        setTimeout(() => this.durum = 2, 2000);
     }
-    cDUpdate = () => { //UPDATE'DEN HEMEN SONRA
-        LayoutAnimation.easeInEaseOut();
-    }
-    cWUnmount = () => { //KAPANIŞTAN HEMEN NÖCE
-    }
+    cDUpdate = () => { LayoutAnimation.easeInEaseOut(); }
+    cWUnmount = () => { }
 
-    splashAktif = true; //true: splash göster, false: asnasayfa goster
+
+    durum = 0; //0: splash, 1: oturumaç, 2: üyeol, 3:anasayfa
+
 
     set = (k, v) => this[k] = v;
 }
@@ -23,7 +22,7 @@ decorate(
         cDUpdate: action,
         cWUnmount: action,
 
-        splashAktif: observable,
+        durum: observable,
 
         set: action,
     }

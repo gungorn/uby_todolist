@@ -1,14 +1,19 @@
 import React from 'react';
-import { View, StatusBar } from 'react-native';
+import { View } from 'react-native';
 import { observer } from 'mobx-react';
 
+import Arkaplan from '../../components/Arkaplan';
+
 import C from '../../controllers/anasayfa/anasayfaC';
+import splashC from '../../controllers/splashC';
 
 import { anasayfaS as S } from '../stil';
-import temaH from '../../helper/temaH';
-import Splash from '../Splash';
+
+
 import UstBolge from './UstBolge';
 import Notlar from './Notlar';
+import Splash from '../Splash';
+
 
 class Anasayfa extends React.Component {
     componentDidMount = C.cDMount;
@@ -17,16 +22,20 @@ class Anasayfa extends React.Component {
 
 
     render() {
+        const durum = splashC.durum;
+
         return (
-            <View style={[S.K, C.splashAktif && S.K2]}>
-                <StatusBar
-                    backgroundColor={C.splashAktif ? 'transparent' : temaH.renkler.r1}
-                    barStyle={'dark-content'}
-                />
+            <View style={[S.K, durum && S.K2]}>
+                <Arkaplan source={require('../../../assets/back2.jpg')} opacity={durum === 0 ? 0 : 0.8} />
 
-                <UstBolge />
+                {
+                    durum === 3 &&
+                    <>
+                        <UstBolge />
+                        <Notlar />
+                    </>
+                }
 
-                {!C.splashAktif && <Notlar />}
 
                 <Splash />
             </View>

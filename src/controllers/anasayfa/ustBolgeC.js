@@ -2,13 +2,13 @@ import { observable, action, decorate } from 'mobx';
 import { LayoutAnimation } from 'react-native';
 
 class ustBolgeC {
-    cDMount = async () => { }
+    cDMount = () => { }
     cDUpdate = () => { LayoutAnimation.easeInEaseOut(); }
     cWUnmount = () => { }
 
+
     set = (k, v) => this[k] = v;
 }
-
 
 decorate(
     ustBolgeC,
@@ -17,7 +17,7 @@ decorate(
         cDUpdate: action,
         cWUnmount: action,
 
-        set: action
+        set: action,
     }
 );
 
