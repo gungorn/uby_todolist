@@ -1,5 +1,6 @@
 import { observable, action, decorate } from 'mobx';
 import { LayoutAnimation } from 'react-native';
+import notM from '../../models/notM';
 
 class anasayfaC {
     cDMount = () => { //AÇILIŞTAN HEMEN SONRA
@@ -18,7 +19,7 @@ class anasayfaC {
 
 
     olustur = async () => {
-
+        await notM.ekleNot();
     }
 
     set = (k, v) => this[k] = v;

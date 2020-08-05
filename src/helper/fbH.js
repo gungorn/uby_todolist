@@ -2,6 +2,7 @@ import { observable, action, decorate } from 'mobx';
 import auth_ from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
 import oturumC from '../controllers/oturumC';
+import sid from 'shortid';
 
 const auth = auth_();
 const db = database();
@@ -28,6 +29,13 @@ class fbH {
     });
 
 
+    ekleNot = notVeri => new Promise(resolve => {
+        db.ref(`/NOTLAR/${sid()}${sid()}`)
+            .set(notVeri)
+            .then(() => resolve(true))
+            .catch(() => resolve(false));
+    });
+
     guncelleKullaniciBilgi = (uid, veri) => new Promise(resolve => {
         if (!uid) { resolve(false); return; }
 
@@ -52,7 +60,11 @@ decorate(
 
         oturumAc: action,
 
+
         eslestirKAUID: action,
+
+        ekleNot: action,
+
         guncelleKullaniciBilgi: action,
         getirKullaniciBilgi: action,
     }

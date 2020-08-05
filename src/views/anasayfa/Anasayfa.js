@@ -77,7 +77,7 @@ class Anasayfa extends React.Component {
                     </View>
 
 
-                    <TouchableOpacity style={S.olusturB} onPress={() => console.log('test')}>
+                    <TouchableOpacity style={S.olusturB} onPress={C.olustur}>
                         <Text style={S.olusturBY}>Oluştur</Text>
                     </TouchableOpacity>
                 </View>
