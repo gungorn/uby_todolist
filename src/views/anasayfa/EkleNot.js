@@ -9,6 +9,7 @@ import tlfnH from '../../helper/tlfnH';
 import { anasayfaS as S } from '../stil';
 import Ikon from '../../components/Ikon';
 import temaH from '../../helper/temaH';
+import notlarC from '../../controllers/anasayfa/notlarC';
 
 
 class EkleNot extends React.Component {
@@ -64,7 +65,7 @@ class EkleNot extends React.Component {
                                 <Ikon is={'MaterialCommunityIcons'} i={'share-variant'} c={temaH.renkler.r2} s={24} />
                             </TouchableOpacity>
 
-                            <TouchableOpacity style={S.buton}>
+                            <TouchableOpacity style={S.buton} onPress={() => notlarC.ImagePicker()}>
                                 <Ikon is={'MaterialCommunityIcons'} i={'camera-plus'} c={temaH.renkler.r2} s={24} />
                             </TouchableOpacity>
                         </View>
