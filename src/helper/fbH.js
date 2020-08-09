@@ -53,6 +53,18 @@ class fbH {
             .then(() => resolve(true))
             .catch(() => resolve(false));
     });
+    guncelleNotRenk = (notid, renk) => new Promise(resolve => {
+        db.ref(`/NOTLAR/${notid}/renk`)
+            .set(renk)
+            .then(() => resolve(true))
+            .catch(() => resolve(false));
+    });
+    guncelleNotDurum = (notid, durum) => new Promise(resolve => {
+        db.ref(`/NOTLAR/${notid}/durum`)
+            .set(durum)
+            .then(() => resolve(true))
+            .catch(() => resolve(false));
+    });
 
 
     getirKullaniciBilgi = (uid) => new Promise(resolve => {
